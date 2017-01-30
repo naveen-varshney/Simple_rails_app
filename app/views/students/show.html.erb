@@ -1,0 +1,17 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Data</title>
+</head>
+<body>
+<h1><%= @studs.name %></h1>
+<h2><%= @studs.age %></h2>
+<h3><%= @studs.course %></h3>
+<% @subs.each do |i| %>
+<% if @studs.id == i.student_id %>
+<h4><%= i.sub_name %></h4>
+<% end %>
+<%end %>
+
+</body>
+</html>

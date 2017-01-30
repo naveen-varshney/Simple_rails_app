@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>STUDENT DATA</title>	
+	<style type="text/css">
+	table, th, td {
+  
+}
+a:link    {color:green; background-color:transparent; text-decoration:none}
+a:visited {color:pink; background-color:transparent; text-decoration:none}
+a:hover   {color:red; background-color:transparent; text-decoration:underline}
+a:active  {color:yellow; background-color:transparent; text-decoration:underline}
+table{
+	border-collapse: collapse;
+	text-align: center;
+
+}
+th,td{
+	 padding: 15px;
+}
+tr:hover {background-color: #f5f5f5}
+tr:nth-child(even) {background-color: #f2f2f2}
+</style>
+</head>
+<body>
+
+<table width="100%">
+	<tr>
+		<th>
+			Name
+		</th>
+		<th>Age</th>
+		<th>Course</th>
+		<th>Subject</th>
+		<th>delete data</th>
+		<th>edit data</th>
+		<th>show data</th>
+		<th>DOB</th>
+		<th>Status</th>
+	</tr>
+	<% @studs.each do |stu| %>
+	<tr>
+		<td>
+			<%= stu.name %>
+		</td>
+		<td><%= stu.age %></td>
+		<td><%= stu.course %></td>
+		<% @subs.each do |sub| %>
+		<% if stu.id == sub.student_id %>
+		<td><%= sub.sub_name %></td>
+		<% end %>
+		<% end %>
+		<td><%= link_to 'delete', student_path(stu.id), method: :delete %></td>	
+		<td><%= link_to 'edit', edit_student_path(stu.id) %></td>
+		<td><%= link_to 'show', student_path(stu.id) %></td>
+		
+		<td><%= stu.dob %></td>	
+		<td><%= link_to status_text(stu.status), status_student_path(stu.id), method: :post %></td>		
+	</tr>
+	<% end %>
+</table>
+<%= link_to 'new', new_student_path %>
+
+</body>
+</html>

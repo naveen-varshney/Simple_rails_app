@@ -1,0 +1,1 @@
+json.array! @empes, partial: 'empes/empe', as: :empe

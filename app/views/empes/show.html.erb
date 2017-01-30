@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>E:</strong>
+  <%= @empe.e_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @empe.name %>
+</p>
+
+<p>
+  <strong>Exp:</strong>
+  <%= @empe.exp %>
+</p>
+
+<p>
+  <strong>Join date:</strong>
+  <%= @empe.join_date %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @empe.status %>
+</p>
+
+<%= link_to 'Edit', edit_empe_path(@empe) %> |
+<%= link_to 'Back', empes_path %>

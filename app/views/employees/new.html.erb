@@ -1,0 +1,10 @@
+
+
+<%= simple_form_for @emps do |f| %>
+<%= f.input :e_id, label:'Enter Employee Id', error: 'id is mandetory', placeholder: 'Enter id',input_html: { class: 'my_class' }%>
+<%= f.input :name,placeholder: 'Enter name',input_html: { class: 'my_class' } %>
+<%= f.input :exp,placeholder: 'Enter Experince',input_html: { class: 'my_class' }%>
+<%= f.input :join_date, as: :date, start_year: Date.today.year - 90,end_year: Date.today.year , discard_day: false ,input_html: { class: 'my_class' }%> 
+<%= f.input :status,as: :radio_buttons%>
+<%= f.button :submit,input_html: { class: 'my_class' } %>
+<% end %>

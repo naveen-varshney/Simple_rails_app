@@ -1,0 +1,47 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>update records</title>
+</head>
+<body>
+<%= form_for @stud do |f| %>
+<p>
+	<%= f.label :EnterName %>
+</p>
+<p>
+	<%= f.text_field :name,  required: true%>
+</p>
+<p>
+	<%= f.label :EnterAge %>
+</p>	
+<p>
+	<%= f.text_field :age %>
+</p>
+<p>
+	<%= f.label :EnterCourse %>
+</p>
+<p>	
+	<%= f.text_field :course %>
+</p>
+<%= f.fields_for :subjects do |u| %>	
+<p>
+	<%= u.label :Subject %>
+</p>
+<p>
+	<%= u.text_field :sub_name %>
+</p>
+<% end %>
+<p>
+	<%= f.label :DOB %>
+</p>	
+<p>
+	<%= f.text_field :dob %>
+</p>
+
+<p>
+	<%= f.submit %>
+</p>
+<% end %>
+
+</body>
+</html>

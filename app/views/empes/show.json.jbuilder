@@ -1,0 +1,1 @@
+json.partial! "empes/empe", empe: @empe

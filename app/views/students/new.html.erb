@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	<style type="text/css">
+	.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+</style>
+		
+	</title>
+</head>
+<body>
+<!--<%= form_for @studs do |f| %>
+<% if @studs.errors.any? %>
+<ul>
+	<% @studs.errors.full_messages.each do |messege| %>
+	<li><%= messege %></li>
+	<% end %>
+</ul>
+<% end %>
+
+<p>
+	<%= f.label :EnterName %>
+</p>
+<p>
+	<%= f.text_field :name  %>
+</p>
+<p>
+	<%= f.label :EnterAge %>
+</p>	
+<p>
+	<%= f.text_field :age %>
+</p>
+<p>
+	<%= f.label :EnterCourse %>
+</p>
+<p>	
+	<%= f.text_field :course %>
+</p>
+<%= f.fields_for :subjects do |u| %>	
+<p>
+	<%= u.label :Subject %>
+</p>
+<p>
+	<%= u.text_field :sub_name %>
+</p>
+<% end %>
+<p>
+	<%= f.submit %>
+</p>
+<% end %>-->
+<%= simple_form_for @studs do |f| %>
+<%= f.input :name, label:'Enter Your name', error: 'name is mandetory', placeholder: 'Enter name'%>
+<%= f.input :age, hint: 'use digits' %>
+<%= f.input :course,label_html: { class: 'my_class' }%>
+<%= f.input :dob, as: :date, start_year: Date.today.year - 90,end_year: Date.today.year - 12, discard_day: false %> 
+<%= f.association :subjects %>
+<!--<%= f.simple_fields_for :subjects do |u| %>	
+	<%= u.input :sub_name %>
+<% end %>-->
+<!--<%= f.association :subjects %>--> 
+<%= f.button :submit %>
+<% end %>
+</body>
+</html>

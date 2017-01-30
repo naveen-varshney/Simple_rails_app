@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>update records</title>
+</head>
+<body>
+<%= simple_form_for @emps do |f| %>
+<%= f.input :e_id, label:'Enter Your name', error: 'name is mandetory', placeholder: 'Enter name'%>
+<%= f.input :name %>
+<%= f.input :exp,label_html: { class: 'my_class' }%>
+<%= f.input :join_date, as: :date, start_year: Date.today.year - 90,end_year: Date.today.year - 12, discard_day: false %> 
+<%= f.input :status,as: :radio_buttons%>
+<%= f.button :submit %>
+<% end %>
+
+</body>
+</html>

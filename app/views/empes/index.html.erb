@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Empes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>E</th>
+      <th>Name</th>
+      <th>Exp</th>
+      <th>Join date</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @empes.each do |empe| %>
+      <tr>
+        <td><%= empe.e_id %></td>
+        <td><%= empe.name %></td>
+        <td><%= empe.exp %></td>
+        <td><%= empe.join_date %></td>
+        <td><%= empe.status %></td>
+        <td><%= link_to 'Show', empe %></td>
+        <td><%= link_to 'Edit', edit_empe_path(empe) %></td>
+        <td><%= link_to 'Destroy', empe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Empe', new_empe_path %>
